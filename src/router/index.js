@@ -1,23 +1,23 @@
-import { createWebHashHistory, createRouter } from "vue-router"
-import ContactBook from '@/views/ContactBook.vue'
+import { createWebHistory, createRouter } from "vue-router";
+import ContactBook from '@/views/ContactBook.vue';
+import NotFound from '@/views/NotFound.vue';
 
 const routes = [
-    {
-        path: "/",
-        name: "contactbook",
-        component: ContactBook,
-    },
-    {
-        path: "/:pathMatch(.*)*",
-        name: "notfound",
-        component: () => import("@/views/NotFound.vue"),
-    },
-        
-]
+  {
+    path: "/",
+    name: "contactbook",
+    component: ContactBook,
+  },
+  {
+    path: "/:pathMatch(.*)",
+    name: "notfound",
+    component: NotFound,
+  },
+];
 
-const router = createRouter ({
-    history: createWebHashHistory(import.meta.env.BASE_URL),
-    routes,
-})
+const router = createRouter({
+  history: createWebHistory(import.meta.env.baseURL),
+  routes,
+});
 
-export default router
+export default router;
