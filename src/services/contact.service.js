@@ -1,5 +1,4 @@
 import createApiClient from "./api.service"
-
 class ContactService {
 
     constructor(baseUrl = "/api/contacts") {
